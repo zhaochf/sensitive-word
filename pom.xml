@@ -195,7 +195,7 @@
     <scm>
         <url>https://github.com/zhaochf/sensitive-word</url>
         <connection>https://github.com/zhaochf/sensitive-word.git</connection>
-        <developerConnection>https://github.com/zhaochf</developerConnection>
+        <developerConnection>https://github.com/zhaochf/sensitive-word.git</developerConnection>
     </scm>
     <developers>
         <developer>
