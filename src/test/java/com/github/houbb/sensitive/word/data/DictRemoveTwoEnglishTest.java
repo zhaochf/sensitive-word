@@ -1,10 +1,7 @@
 package com.github.houbb.sensitive.word.data;
 
 import com.github.houbb.heaven.util.io.FileUtil;
-import com.github.houbb.heaven.util.lang.CharUtil;
 import com.github.houbb.heaven.util.lang.StringUtil;
-import org.junit.Ignore;
-import org.junit.Test;
 
 import java.util.List;
 
@@ -13,7 +10,7 @@ import java.util.List;
  * @author binbin.hou
  * @since 0.9.0
  */
-@Ignore
+
 public class DictRemoveTwoEnglishTest {
 
     public static void main(String[] args) {

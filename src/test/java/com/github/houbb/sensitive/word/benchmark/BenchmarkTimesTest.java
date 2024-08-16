@@ -1,12 +1,10 @@
 package com.github.houbb.sensitive.word.benchmark;
 
+import org.junit.jupiter.api.Test;
+
 import com.github.houbb.heaven.util.util.RandomUtil;
 import com.github.houbb.sensitive.word.bs.SensitiveWordBs;
-import com.github.houbb.sensitive.word.core.SensitiveWordHelper;
-import org.junit.Ignore;
-import org.junit.Test;
 
-@Ignore
 public class BenchmarkTimesTest {
 
     /**
@@ -15,8 +13,8 @@ public class BenchmarkTimesTest {
      * V0.6.0: 1470ms，接近 7.2W QPS
      * V0.7.0: 1380ms
      */
-    @Test
-    public void onlyWordAndNoReplaceTest() {
+   @Test
+   public void onlyWordAndNoReplaceTest() {
         // 1W 次
         SensitiveWordBs sensitiveWordBs = SensitiveWordBs.newInstance()
                 .enableWordCheck(true)
@@ -48,8 +46,8 @@ public class BenchmarkTimesTest {
      * V0.6.0: 2744ms, 约 3.7W QPS
      * V0.7.0: 2723ms
      */
-    @Test
-    public void onlyWordAndWithReplaceTest() {
+   @Test
+   public void onlyWordAndWithReplaceTest() {
         // 1W 次
         SensitiveWordBs sensitiveWordBs = SensitiveWordBs.newInstance()
                 .enableWordCheck(true)

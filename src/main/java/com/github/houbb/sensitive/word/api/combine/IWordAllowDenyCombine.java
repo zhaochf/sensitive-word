@@ -5,7 +5,6 @@ import com.github.houbb.sensitive.word.api.IWordContext;
 import com.github.houbb.sensitive.word.api.IWordDeny;
 
 import java.util.Collection;
-import java.util.List;
 
 /**
  * @author d

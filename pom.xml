@@ -22,14 +22,14 @@
 
         <!--============================== MAIN ==============================-->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.compiler.level>1.7</project.compiler.level>
+        <project.compiler.level>17</project.compiler.level>
 
         <!--============================== INTER ==============================-->
         <heaven.version>0.11.0</heaven.version>
         <opencc4j.version>1.8.1</opencc4j.version>
 
         <!--============================== OTHER ==============================-->
-        <junit.version>4.13.1</junit.version>
+        <junit.version>5.11.0</junit.version>
     </properties>
 
     <dependencyManagement>
@@ -60,13 +60,13 @@
             </dependency>
             <!--============================== OTHER ==============================-->
 
-            <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-                <version>${junit.version}</version>
-                <scope>test</scope>
-                <optional>true</optional>
-            </dependency>
+           <dependency>
+				<groupId>org.junit</groupId>
+				<artifactId>junit-bom</artifactId>
+				<version>${junit.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
 
             <dependency>
                 <groupId>org.apache.lucene</groupId>
@@ -94,10 +94,11 @@
         </dependency>
 
         <!--============================== OTHER ==============================-->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-        </dependency>
+       <dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter</artifactId>
+			<scope>test</scope>
+		</dependency>
 
         <dependency>
             <groupId>org.apache.lucene</groupId>
@@ -192,14 +193,19 @@
         </license>
     </licenses>
     <scm>
-        <url>https://github.com/houbb/sensitive-word</url>
-        <connection>https://github.com/houbb/sensitive-word.git</connection>
-        <developerConnection>https://houbb.github.io/</developerConnection>
+        <url>https://github.com/zhaochf/sensitive-word</url>
+        <connection>https://github.com/zhaochf/sensitive-word.git</connection>
+        <developerConnection>https://github.com/zhaochf</developerConnection>
     </scm>
     <developers>
         <developer>
             <name>houbb</name>
             <email>houbinbin.echo@gmail.com</email>
+            <url>https://houbb.github.io/</url>
+        </developer>
+        <developer>
+            <name>zhaochf</name>
+            <email>zhaochf@aliyun.com</email>
             <url>https://houbb.github.io/</url>
         </developer>
     </developers>
@@ -256,13 +262,10 @@
                 </plugins>
             </build>
             <distributionManagement>
-                <snapshotRepository>
-                    <id>oss</id>
-                    <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-                </snapshotRepository>
                 <repository>
-                    <id>oss</id>
-                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+                    <id>third-release</id>
+                    <name>third-release</name>
+                    <url>http://124.225.88.82:8082/artifactory/third-release</url>
                 </repository>
             </distributionManagement>
         </profile>

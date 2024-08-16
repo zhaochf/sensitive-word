@@ -4,8 +4,8 @@ import com.github.houbb.heaven.util.io.StreamUtil;
 import com.github.houbb.sensitive.word.api.IWordData;
 import com.github.houbb.sensitive.word.support.data.WordDatas;
 import org.apache.lucene.util.RamUsageEstimator;
-import org.junit.Ignore;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
@@ -14,14 +14,14 @@ import java.util.List;
  *
  * @since 0.7.0
  */
-@Ignore
+
 public class DataMemoryTest {
 
     /**
      * 35.5 MB
      */
-    @Test
-    public void hashMapTest() {
+   @Test
+   public void hashMapTest() {
         List<String> allLines = StreamUtil.readAllLines("/sensitive_word_dict.txt");
         IWordData wordData = WordDatas.defaults();
 
@@ -34,8 +34,8 @@ public class DataMemoryTest {
 
 
     //33.4 MB
-    @Test
-    public void treeTest() {
+   @Test
+   public void treeTest() {
         List<String> allLines = StreamUtil.readAllLines("/sensitive_word_dict.txt");
         IWordData wordData = WordDatas.tree();
 

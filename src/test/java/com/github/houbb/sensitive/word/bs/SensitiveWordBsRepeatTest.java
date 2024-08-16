@@ -1,7 +1,9 @@
 package com.github.houbb.sensitive.word.bs;
 
-import org.junit.Assert;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.List;
 
@@ -26,7 +28,7 @@ public class SensitiveWordBsRepeatTest {
                 .ignoreRepeat(true)
                 .init()
                 .findAll(text);
-        Assert.assertEquals("[ⒻⒻⒻfⓤuⓤ⒰cⓒ⒦]", wordList.toString());
+        assertEquals("[ⒻⒻⒻfⓤuⓤ⒰cⓒ⒦]", wordList.toString());
     }
 
 }

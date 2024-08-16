@@ -4,11 +4,7 @@ import com.github.houbb.heaven.support.pipeline.Pipeline;
 import com.github.houbb.heaven.util.util.ArrayUtil;
 import com.github.houbb.heaven.util.util.CollectionUtil;
 import com.github.houbb.sensitive.word.api.IWordCheck;
-import com.github.houbb.sensitive.word.api.IWordContext;
-
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 
 /**
  * 敏感词检测工具

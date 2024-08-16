@@ -1,8 +1,8 @@
 package com.github.houbb.sensitive.word.data;
 
 import com.github.houbb.heaven.util.io.FileUtil;
-import org.junit.Ignore;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ import java.util.List;
  * @author binbin.hou
  * @since 0.9.0
  */
-@Ignore
+
 public class DictRemoveSingleTest {
 
     /**
@@ -24,7 +24,7 @@ public class DictRemoveSingleTest {
      * @since 0.0.3
      */
     @Test
-    @Ignore
+    
     public void removeSingleWord() {
         final String sourceFile = "D:\\code\\github\\sensitive-word\\src\\test\\resources\\dict_20231117.txt";
         final String targetFile = "D:\\code\\github\\sensitive-word\\src\\main\\resources\\sensitive_word_dict.txt";

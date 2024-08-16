@@ -1,7 +1,9 @@
 package com.github.houbb.sensitive.word.bs;
 
-import org.junit.Assert;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.List;
 
@@ -23,7 +25,7 @@ public class SensitiveWordBsChineseTest {
         final String text = "我爱我的祖国和五星紅旗。";
 
         List<String> wordList = SensitiveWordBs.newInstance().init().findAll(text);
-        Assert.assertEquals("[五星紅旗]", wordList.toString());
+        assertEquals("[五星紅旗]", wordList.toString());
     }
 
 }

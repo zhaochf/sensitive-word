@@ -2,8 +2,10 @@ package com.github.houbb.sensitive.word.bs;
 
 import com.github.houbb.sensitive.word.api.IWordDeny;
 import com.github.houbb.sensitive.word.support.resultcondition.WordResultConditions;
-import org.junit.Assert;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -32,7 +34,7 @@ public class SensitiveWordBsResultConditionTest {
                 .wordResultCondition(WordResultConditions.alwaysTrue())
                 .init()
                 .findAll(text);
-        Assert.assertEquals("[av]", wordList.toString());
+        assertEquals("[av]", wordList.toString());
     }
 
     @Test
@@ -49,7 +51,7 @@ public class SensitiveWordBsResultConditionTest {
                 .wordResultCondition(WordResultConditions.englishWordMatch())
                 .init()
                 .findAll(text);
-        Assert.assertEquals("[]", wordList.toString());
+        assertEquals("[]", wordList.toString());
     }
 
     @Test
@@ -66,7 +68,7 @@ public class SensitiveWordBsResultConditionTest {
                 .wordResultCondition(WordResultConditions.englishWordMatch())
                 .init()
                 .findAll(text);
-        Assert.assertEquals("[]", wordList.toString());
+        assertEquals("[]", wordList.toString());
     }
 
     @Test
@@ -83,7 +85,7 @@ public class SensitiveWordBsResultConditionTest {
                 .wordResultCondition(WordResultConditions.englishWordMatch())
                 .init()
                 .findAll(text);
-        Assert.assertEquals("[av]", wordList.toString());
+        assertEquals("[av]", wordList.toString());
     }
 
     @Test
@@ -100,7 +102,7 @@ public class SensitiveWordBsResultConditionTest {
                 .wordResultCondition(WordResultConditions.englishWordMatch())
                 .init()
                 .findAll(text);
-        Assert.assertEquals("[day]", wordList.toString());
+        assertEquals("[day]", wordList.toString());
     }
 
     @Test
@@ -117,7 +119,7 @@ public class SensitiveWordBsResultConditionTest {
                 .wordResultCondition(WordResultConditions.englishWordMatch())
                 .init()
                 .findAll(text);
-        Assert.assertEquals("[]", wordList.toString());
+        assertEquals("[]", wordList.toString());
     }
 
 }

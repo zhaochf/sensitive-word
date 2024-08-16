@@ -31,3 +31,6 @@ target/
 .DS_Store
 Thumbs.db
 
+# vscode ignore
+.vscode
+

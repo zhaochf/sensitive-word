@@ -1,12 +1,11 @@
 package com.github.houbb.sensitive.word.benchmark;
 
+import org.junit.jupiter.api.Test;
+
 import com.github.houbb.heaven.util.util.RandomUtil;
 import com.github.houbb.sensitive.word.bs.SensitiveWordBs;
 import com.github.houbb.sensitive.word.core.SensitiveWordHelper;
-import org.junit.Ignore;
-import org.junit.Test;
 
-@Ignore
 public class BenchmarkBasicTest {
 
     /**

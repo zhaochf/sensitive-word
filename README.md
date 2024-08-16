@@ -117,7 +117,7 @@
 ```java
 final String text = "五星红旗迎风飘扬，毛主席的画像屹立在天安门前。";
 
-Assert.assertTrue(SensitiveWordHelper.contains(text));
+assertTrue(SensitiveWordHelper.contains(text));
 ```
 
 ### 返回第一个敏感词
@@ -126,7 +126,7 @@ Assert.assertTrue(SensitiveWordHelper.contains(text));
 final String text = "五星红旗迎风飘扬，毛主席的画像屹立在天安门前。";
 
 String word = SensitiveWordHelper.findFirst(text);
-Assert.assertEquals("五星红旗", word);
+assertEquals("五星红旗", word);
 ```
 
 SensitiveWordHelper.findFirst(text) 等价于：
@@ -141,7 +141,7 @@ String word = SensitiveWordHelper.findFirst(text, WordResultHandlers.word());
 final String text = "五星红旗迎风飘扬，毛主席的画像屹立在天安门前。";
 
 List<String> wordList = SensitiveWordHelper.findAll(text);
-Assert.assertEquals("[五星红旗, 毛主席, 天安门]", wordList.toString());
+assertEquals("[五星红旗, 毛主席, 天安门]", wordList.toString());
 ```
 
 返回所有敏感词用法上类似于 SensitiveWordHelper.findFirst()，同样也支持指定结果处理类。
@@ -159,7 +159,7 @@ final String text = "五星红旗迎风飘扬，毛主席的画像屹立在天�
 
 // 默认敏感词标签为空
 List<WordTagsDto> wordList1 = SensitiveWordHelper.findAll(text, WordResultHandlers.wordTags());
-Assert.assertEquals("[WordTagsDto{word='五星红旗', tags=[]}, WordTagsDto{word='毛主席', tags=[]}, WordTagsDto{word='天安门', tags=[]}]", wordList1.toString());
+assertEquals("[WordTagsDto{word='五星红旗', tags=[]}, WordTagsDto{word='毛主席', tags=[]}, WordTagsDto{word='天安门', tags=[]}]", wordList1.toString());
 ```
 
 ### 默认的替换策略
@@ -167,7 +167,7 @@ Assert.assertEquals("[WordTagsDto{word='五星红旗', tags=[]}, WordTagsDto{wor
 ```java
 final String text = "五星红旗迎风飘扬，毛主席的画像屹立在天安门前。";
 String result = SensitiveWordHelper.replace(text);
-Assert.assertEquals("****迎风飘扬，***的画像屹立在***前。", result);
+assertEquals("****迎风飘扬，***的画像屹立在***前。", result);
 ```
 
 ### 指定替换的内容
@@ -175,7 +175,7 @@ Assert.assertEquals("****迎风飘扬，***的画像屹立在***前。", result)
 ```java
 final String text = "五星红旗迎风飘扬，毛主席的画像屹立在天安门前。";
 String result = SensitiveWordHelper.replace(text, '0');
-Assert.assertEquals("0000迎风飘扬，000的画像屹立在000前。", result);
+assertEquals("0000迎风飘扬，000的画像屹立在000前。", result);
 ```
 
 ### 自定义替换策略
@@ -200,7 +200,7 @@ public void defineReplaceTest() {
     ISensitiveWordReplace replace = new MySensitiveWordReplace();
     String result = SensitiveWordHelper.replace(text, replace);
 
-    Assert.assertEquals("国家旗帜迎风飘扬，教员的画像屹立在***前。", result);
+    assertEquals("国家旗帜迎风飘扬，教员的画像屹立在***前。", result);
 }
 ```
 
@@ -259,12 +259,12 @@ IWordResultHandler 可以对敏感词的结果进行处理，允许用户自定�
 final String text = "五星红旗迎风飘扬，毛主席的画像屹立在天安门前。";
 
 List<String> wordList = SensitiveWordHelper.findAll(text);
-Assert.assertEquals("[五星红旗, 毛主席, 天安门]", wordList.toString());
+assertEquals("[五星红旗, 毛主席, 天安门]", wordList.toString());
 List<String> wordList2 = SensitiveWordHelper.findAll(text, WordResultHandlers.word());
-Assert.assertEquals("[五星红旗, 毛主席, 天安门]", wordList2.toString());
+assertEquals("[五星红旗, 毛主席, 天安门]", wordList2.toString());
 
 List<IWordResult> wordList3 = SensitiveWordHelper.findAll(text, WordResultHandlers.raw());
-Assert.assertEquals("[WordResult{startIndex=0, endIndex=4}, WordResult{startIndex=9, endIndex=12}, WordResult{startIndex=18, endIndex=21}]", wordList3.toString());
+assertEquals("[WordResult{startIndex=0, endIndex=4}, WordResult{startIndex=9, endIndex=12}, WordResult{startIndex=18, endIndex=21}]", wordList3.toString());
 ```
 
 2) wordTags 例子
@@ -276,13 +276,13 @@ final String text = "五星红旗迎风飘扬，毛主席的画像屹立在天�
 
 // 默认敏感词标签为空
 List<WordTagsDto> wordList1 = SensitiveWordHelper.findAll(text, WordResultHandlers.wordTags());
-Assert.assertEquals("[WordTagsDto{word='五星红旗', tags=[]}, WordTagsDto{word='毛主席', tags=[]}, WordTagsDto{word='天安门', tags=[]}]", wordList1.toString());
+assertEquals("[WordTagsDto{word='五星红旗', tags=[]}, WordTagsDto{word='毛主席', tags=[]}, WordTagsDto{word='天安门', tags=[]}]", wordList1.toString());
 
 List<WordTagsDto> wordList2 = SensitiveWordBs.newInstance()
         .wordTag(WordTags.file("dict_tag_test.txt"))
         .init()
         .findAll(text, WordResultHandlers.wordTags());
-Assert.assertEquals("[WordTagsDto{word='五星红旗', tags=[政治, 国家]}, WordTagsDto{word='毛主席', tags=[政治, 伟人, 国家]}, WordTagsDto{word='天安门', tags=[政治, 国家, 地址]}]", wordList2.toString());
+assertEquals("[WordTagsDto{word='五星红旗', tags=[政治, 国家]}, WordTagsDto{word='毛主席', tags=[政治, 伟人, 国家]}, WordTagsDto{word='天安门', tags=[政治, 国家, 地址]}]", wordList2.toString());
 ```
 
 # 更多特性
@@ -299,7 +299,7 @@ Assert.assertEquals("[WordTagsDto{word='五星红旗', tags=[政治, 国家]}, W
 final String text = "fuCK the bad words.";
 
 String word = SensitiveWordHelper.findFirst(text);
-Assert.assertEquals("fuCK", word);
+assertEquals("fuCK", word);
 ```
 
 ### 忽略半角圆角
@@ -308,7 +308,7 @@ Assert.assertEquals("fuCK", word);
 final String text = "ｆｕｃｋ the bad words.";
 
 String word = SensitiveWordHelper.findFirst(text);
-Assert.assertEquals("ｆｕｃｋ", word);
+assertEquals("ｆｕｃｋ", word);
 ```
 
 ### 忽略数字的写法
@@ -319,7 +319,7 @@ Assert.assertEquals("ｆｕｃｋ", word);
 final String text = "这个是我的微信：9⓿二肆⁹₈③⑸⒋➃㈤㊄";
 
 List<String> wordList = SensitiveWordBs.newInstance().enableNumCheck(true).init().findAll(text);
-Assert.assertEquals("[9⓿二肆⁹₈③⑸⒋➃㈤㊄]", wordList.toString());
+assertEquals("[9⓿二肆⁹₈③⑸⒋➃㈤㊄]", wordList.toString());
 ```
 
 ### 忽略繁简体
@@ -328,7 +328,7 @@ Assert.assertEquals("[9⓿二肆⁹₈③⑸⒋➃㈤㊄]", wordList.toString())
 final String text = "我爱我的祖国和五星紅旗。";
 
 List<String> wordList = SensitiveWordHelper.findAll(text);
-Assert.assertEquals("[五星紅旗]", wordList.toString());
+assertEquals("[五星紅旗]", wordList.toString());
 ```
 
 ### 忽略英文的书写格式
@@ -337,7 +337,7 @@ Assert.assertEquals("[五星紅旗]", wordList.toString());
 final String text = "Ⓕⓤc⒦ the bad words";
 
 List<String> wordList = SensitiveWordHelper.findAll(text);
-Assert.assertEquals("[Ⓕⓤc⒦]", wordList.toString());
+assertEquals("[Ⓕⓤc⒦]", wordList.toString());
 ```
 
 ### 忽略重复词
@@ -349,7 +349,7 @@ List<String> wordList = SensitiveWordBs.newInstance()
         .ignoreRepeat(true)
         .init()
         .findAll(text);
-Assert.assertEquals("[ⒻⒻⒻfⓤuⓤ⒰cⓒ⒦]", wordList.toString());
+assertEquals("[ⒻⒻⒻfⓤuⓤ⒰cⓒ⒦]", wordList.toString());
 ```
 
 ## 更多检测策略
@@ -361,7 +361,7 @@ Assert.assertEquals("[ⒻⒻⒻfⓤuⓤ⒰cⓒ⒦]", wordList.toString());
 ```java
 final String text = "楼主好人，邮箱 sensitiveword@xx.com";
 List<String> wordList = SensitiveWordBs.newInstance().enableEmailCheck(true).init().findAll(text);
-Assert.assertEquals("[sensitiveword@xx.com]", wordList.toString());
+assertEquals("[sensitiveword@xx.com]", wordList.toString());
 ```
 
 ### 连续数字检测
@@ -377,7 +377,7 @@ final String text = "你懂得：12345678";
 List<String> wordList = SensitiveWordBs.newInstance()
 .enableNumCheck(true)
 .init().findAll(text);
-Assert.assertEquals("[12345678]", wordList.toString());
+assertEquals("[12345678]", wordList.toString());
 
 // 指定数字的长度，避免误杀
 List<String> wordList2 = SensitiveWordBs.newInstance()
@@ -385,7 +385,7 @@ List<String> wordList2 = SensitiveWordBs.newInstance()
 .numCheckLen(9)
 .init()
 .findAll(text);
-Assert.assertEquals("[]", wordList2.toString());
+assertEquals("[]", wordList2.toString());
 ```
 
 ### 网址检测
@@ -398,8 +398,8 @@ v0.18.0 优化 URL 检测，更加严格，降低误判率
 final String text = "点击链接 https://www.baidu.com 查看答案";
 final SensitiveWordBs sensitiveWordBs = SensitiveWordBs.newInstance().enableUrlCheck(true).init();
 List<String> wordList = sensitiveWordBs.findAll(text);
-Assert.assertEquals("[https://www.baidu.com]", wordList.toString());
-Assert.assertEquals("点击链接 ********************* 查看答案", sensitiveWordBs.replace(text));
+assertEquals("[https://www.baidu.com]", wordList.toString());
+assertEquals("点击链接 ********************* 查看答案", sensitiveWordBs.replace(text));
 ```
 
 ### IPV4 检测
@@ -412,7 +412,7 @@ v0.17.0 支持
 final String text = "个人网站，如果网址打不开可以访问 127.0.0.1。";
 final SensitiveWordBs sensitiveWordBs = SensitiveWordBs.newInstance().enableIpv4Check(true).init();
 List<String> wordList = sensitiveWordBs.findAll(text);
-Assert.assertEquals("[127.0.0.1]", wordList.toString());
+assertEquals("[127.0.0.1]", wordList.toString());
 ```
 
 # 引导类特性配置
@@ -449,7 +449,7 @@ SensitiveWordBs wordBs = SensitiveWordBs.newInstance()
         .init();
 
 final String text = "五星红旗迎风飘扬，毛主席的画像屹立在天安门前。";
-Assert.assertTrue(wordBs.contains(text));
+assertTrue(wordBs.contains(text));
 ```
 ## 配置说明
 
@@ -515,7 +515,7 @@ List<String> wordList = SensitiveWordBs.newInstance()
         .wordResultCondition(WordResultConditions.alwaysTrue())
         .init()
         .findAll(text);
-Assert.assertEquals("[av]", wordList.toString());
+assertEquals("[av]", wordList.toString());
 ```
 
 我们可以指定为英文必须全词匹配。
@@ -533,7 +533,7 @@ List<String> wordList = SensitiveWordBs.newInstance()
         .wordResultCondition(WordResultConditions.englishWordMatch())
         .init()
         .findAll(text);
-Assert.assertEquals("[]", wordList.toString());
+assertEquals("[]", wordList.toString());
 ```
 
 当然可以根据需要实现更加复杂的策略。
@@ -561,7 +561,7 @@ final String text = "傻@冒，狗+东西";
 
 //默认因为有特殊字符分割，无法识别
 List<String> wordList = SensitiveWordBs.newInstance().init().findAll(text);
-Assert.assertEquals("[]", wordList.toString());
+assertEquals("[]", wordList.toString());
 
 // 指定忽略的字符策略，可自行实现。
 List<String> wordList2 = SensitiveWordBs.newInstance()
@@ -569,7 +569,7 @@ List<String> wordList2 = SensitiveWordBs.newInstance()
         .init()
         .findAll(text);
 
-Assert.assertEquals("[傻@冒, 狗+东西]", wordList2.toString());
+assertEquals("[傻@冒, 狗+东西]", wordList2.toString());
 ```
 
 # 敏感词标签
@@ -631,7 +631,7 @@ SensitiveWordBs sensitiveWordBs = SensitiveWordBs.newInstance()
         .wordTag(wordTag)
         .init();
 
-Assert.assertEquals("[政治, 国家]", sensitiveWordBs.tags("五星红旗").toString());;
+assertEquals("[政治, 国家]", sensitiveWordBs.tags("五星红旗").toString());;
 ```
 
 后续会考虑引入一个内置的标签文件策略。
@@ -748,7 +748,7 @@ SensitiveWordBs wordBs = SensitiveWordBs.newInstance()
         .init();
 
 final String text = "五星红旗迎风飘扬，毛主席的画像屹立在天安门前。";
-Assert.assertTrue(wordBs.contains(text));
+assertTrue(wordBs.contains(text));
 ```
 
 备注：init() 对于敏感词 DFA 的构建是比较耗时的，一般建议在应用初始化的时候**只初始化一次**。而不是重复初始化！
@@ -765,7 +765,7 @@ SensitiveWordBs wordBs = SensitiveWordBs.newInstance()
         .wordAllow(new MyWordAllow())
         .init();
 
-Assert.assertEquals("[我的自定义敏感词]", wordBs.findAll(text).toString());
+assertEquals("[我的自定义敏感词]", wordBs.findAll(text).toString());
 ```
 
 这里只有 `我的自定义敏感词` 是敏感词，而 `测试` 不是敏感词。
@@ -797,7 +797,7 @@ SensitiveWordBs wordBs = SensitiveWordBs.newInstance()
         .wordAllow(wordAllow)
         .init();
 
-Assert.assertEquals("[我的自定义敏感词]", wordBs.findAll(text).toString());
+assertEquals("[我的自定义敏感词]", wordBs.findAll(text).toString());
 ```
 
 这里都是同时使用了系统默认配置，和自定义的配置。

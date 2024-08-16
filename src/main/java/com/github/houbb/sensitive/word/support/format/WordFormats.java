@@ -1,14 +1,10 @@
 package com.github.houbb.sensitive.word.support.format;
 
 import com.github.houbb.heaven.support.pipeline.Pipeline;
-import com.github.houbb.heaven.util.guava.Guavas;
 import com.github.houbb.heaven.util.util.ArrayUtil;
 import com.github.houbb.heaven.util.util.CollectionUtil;
 import com.github.houbb.sensitive.word.api.IWordFormat;
-import com.github.houbb.sensitive.word.api.IWordContext;
-
 import java.util.Collection;
-import java.util.List;
 
 /**
  * 格式化工具类

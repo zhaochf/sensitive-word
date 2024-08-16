@@ -2,8 +2,8 @@ package com.github.houbb.sensitive.word.data;
 
 import com.github.houbb.heaven.util.io.FileUtil;
 import com.github.houbb.heaven.util.util.CollectionUtil;
-import org.junit.Ignore;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -36,7 +36,7 @@ public class DataUtil {
     }
 
     @Test
-    @Ignore
+    
     public void singleCharTest() {
         final String path = "D:\\github\\sensitive-word\\src\\main\\resources\\sensitive_word_dict.txt";
 

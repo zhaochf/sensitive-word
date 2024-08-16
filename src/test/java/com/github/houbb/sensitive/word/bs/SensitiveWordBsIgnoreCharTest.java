@@ -1,8 +1,10 @@
 package com.github.houbb.sensitive.word.bs;
 
 import com.github.houbb.sensitive.word.support.ignore.SensitiveWordCharIgnores;
-import org.junit.Assert;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.List;
 
@@ -25,7 +27,7 @@ public class SensitiveWordBsIgnoreCharTest {
 
         //默认因为有特殊字符分割，无法识别
         List<String> wordList = SensitiveWordBs.newInstance().init().findAll(text);
-        Assert.assertEquals("[]", wordList.toString());
+        assertEquals("[]", wordList.toString());
 
         // 指定忽略的字符策略，可自行实现。
         List<String> wordList2 = SensitiveWordBs.newInstance()
@@ -33,7 +35,7 @@ public class SensitiveWordBsIgnoreCharTest {
                 .init()
                 .findAll(text);
 
-        Assert.assertEquals("[傻@冒, 狗+东西]", wordList2.toString());
+        assertEquals("[傻@冒, 狗+东西]", wordList2.toString());
     }
 
 }

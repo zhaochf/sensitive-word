@@ -3,10 +3,8 @@ package com.github.houbb.sensitive.word.support.check;
 import com.github.houbb.heaven.annotation.ThreadSafe;
 import com.github.houbb.heaven.util.lang.CharUtil;
 import com.github.houbb.heaven.util.lang.StringUtil;
-import com.github.houbb.heaven.util.util.regex.RegexUtil;
 import com.github.houbb.sensitive.word.api.IWordCheck;
 import com.github.houbb.sensitive.word.api.context.InnerSensitiveWordContext;
-import com.github.houbb.sensitive.word.constant.WordConst;
 import com.github.houbb.sensitive.word.constant.enums.WordTypeEnum;
 import com.github.houbb.sensitive.word.utils.InnerCharUtils;
 

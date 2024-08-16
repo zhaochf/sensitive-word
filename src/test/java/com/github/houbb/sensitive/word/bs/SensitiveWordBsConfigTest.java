@@ -1,19 +1,14 @@
 package com.github.houbb.sensitive.word.bs;
 
-import com.github.houbb.heaven.util.io.FileUtil;
-import com.github.houbb.heaven.util.util.CollectionUtil;
-import com.github.houbb.sensitive.word.data.WordCountDto;
 import com.github.houbb.sensitive.word.support.allow.WordAllows;
 import com.github.houbb.sensitive.word.support.deny.WordDenys;
 import com.github.houbb.sensitive.word.support.ignore.SensitiveWordCharIgnores;
 import com.github.houbb.sensitive.word.support.resultcondition.WordResultConditions;
 import com.github.houbb.sensitive.word.support.tag.WordTags;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
 
-import java.io.File;
-import java.util.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import org.junit.jupiter.api.Test;
 
 /**
  * <p> project: sensitive-word-SensitiveWordBsConfigTest </p>
@@ -25,7 +20,6 @@ import java.util.*;
 public class SensitiveWordBsConfigTest {
 
     @Test
-    @Ignore
     public void config2Test() {
         SensitiveWordBs wordBs = SensitiveWordBs.newInstance()
                 .ignoreCase(true)
@@ -81,8 +75,8 @@ public class SensitiveWordBsConfigTest {
 //        System.out.println(wordCountDtoList);
     }
 
-    @Test
-    public void configTest() {
+   @Test
+   public void configTest() {
         SensitiveWordBs wordBs = SensitiveWordBs.newInstance()
                 .ignoreCase(true)
                 .ignoreWidth(true)
@@ -100,7 +94,7 @@ public class SensitiveWordBsConfigTest {
                 .init();
 
         final String text = "五星红旗迎风飘扬，毛主席的画像屹立在天安门前。";
-        Assert.assertTrue(wordBs.contains(text));
+        assertTrue(wordBs.contains(text));
     }
 
 }

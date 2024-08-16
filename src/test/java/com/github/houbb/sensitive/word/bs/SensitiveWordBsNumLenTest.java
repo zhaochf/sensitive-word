@@ -1,7 +1,9 @@
 package com.github.houbb.sensitive.word.bs;
 
-import org.junit.Assert;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.List;
 
@@ -26,7 +28,7 @@ public class SensitiveWordBsNumLenTest {
         List<String> wordList = SensitiveWordBs.newInstance()
                 .enableNumCheck(true)
                 .init().findAll(text);
-        Assert.assertEquals("[12345678]", wordList.toString());
+        assertEquals("[12345678]", wordList.toString());
 
         // 指定数字的长度，避免误杀
         List<String> wordList2 = SensitiveWordBs.newInstance()
@@ -34,7 +36,7 @@ public class SensitiveWordBsNumLenTest {
                 .numCheckLen(9)
                 .init()
                 .findAll(text);
-        Assert.assertEquals("[]", wordList2.toString());
+        assertEquals("[]", wordList2.toString());
     }
 
 

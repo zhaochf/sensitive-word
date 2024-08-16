@@ -1,8 +1,8 @@
 package com.github.houbb.sensitive.word.data;
 
 import com.github.houbb.heaven.util.io.FileUtil;
-import org.junit.Ignore;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ import java.util.List;
  * @author binbin.hou
  * @since 0.0.5
  */
-@Ignore
+
 public class DictNumTest {
 
     /**
@@ -24,7 +24,7 @@ public class DictNumTest {
      * @since 0.0.3
      */
     @Test
-    @Ignore
+    
     public void formatTest() {
         final String sourceFile = "D:\\_github\\sensitive-word\\src\\main\\resources\\sensitive_word_dict.txt";
         final String targetFile = "D:\\_github\\sensitive-word\\src\\main\\resources\\sensitive_word_dict.txt";

@@ -1,7 +1,7 @@
 package com.github.houbb.sensitive.word.data;
 
-import org.junit.Ignore;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
@@ -10,7 +10,7 @@ import java.util.List;
  * @author binbin.hou
  * @since 0.0.11
  */
-@Ignore
+
 public class NumUtilTest {
 
     @Test

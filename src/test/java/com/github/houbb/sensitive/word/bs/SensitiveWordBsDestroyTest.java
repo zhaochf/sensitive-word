@@ -1,6 +1,6 @@
 package com.github.houbb.sensitive.word.bs;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * 资源的销毁

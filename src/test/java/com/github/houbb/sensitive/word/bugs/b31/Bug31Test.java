@@ -1,8 +1,11 @@
 package com.github.houbb.sensitive.word.bugs.b31;
 
 import com.github.houbb.sensitive.word.core.SensitiveWordHelper;
-import org.junit.Assert;
-import org.junit.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import org.junit.jupiter.api.Test;
 
 public class Bug31Test {
 
@@ -10,8 +13,8 @@ public class Bug31Test {
     public void lettersTest() {
         String text = "你是SB吧";
 
-        Assert.assertTrue(SensitiveWordHelper.contains(text));
-        Assert.assertEquals("[SB]", SensitiveWordHelper.findAll(text).toString());
+        assertTrue(SensitiveWordHelper.contains(text));
+        assertEquals("[SB]", SensitiveWordHelper.findAll(text).toString());
     }
 
 }

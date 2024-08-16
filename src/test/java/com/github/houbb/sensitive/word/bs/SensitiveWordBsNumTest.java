@@ -1,7 +1,9 @@
 package com.github.houbb.sensitive.word.bs;
 
-import org.junit.Assert;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.List;
 
@@ -25,7 +27,7 @@ public class SensitiveWordBsNumTest {
         List<String> wordList = SensitiveWordBs.newInstance()
                 .enableNumCheck(true)
                 .init().findAll(text);
-        Assert.assertEquals("[9989123456]", wordList.toString());
+        assertEquals("[9989123456]", wordList.toString());
     }
 
     /**
@@ -39,7 +41,7 @@ public class SensitiveWordBsNumTest {
         List<String> wordList = SensitiveWordBs.newInstance()
                 .enableNumCheck(true)
                 .init().findAll(text);
-        Assert.assertEquals("[9⓿二肆⁹₈③⑸⒋➃㈤㊄]", wordList.toString());
+        assertEquals("[9⓿二肆⁹₈③⑸⒋➃㈤㊄]", wordList.toString());
     }
 
 }

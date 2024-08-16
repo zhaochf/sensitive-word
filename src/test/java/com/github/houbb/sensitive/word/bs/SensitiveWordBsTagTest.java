@@ -1,8 +1,10 @@
 package com.github.houbb.sensitive.word.bs;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import com.github.houbb.sensitive.word.api.IWordTag;
 import com.github.houbb.sensitive.word.support.tag.WordTags;
-import org.junit.Assert;
+
 
 /**
  * <p> project: sensitive-word-SensitiveWordBsTest </p>
@@ -23,7 +25,7 @@ public class SensitiveWordBsTagTest {
                 .init()
         ;
 
-        Assert.assertEquals("[政治, 国家]", sensitiveWordBs.tags("五星红旗").toString());;
+        assertEquals("[政治, 国家]", sensitiveWordBs.tags("五星红旗").toString());;
     }
 
 }

@@ -5,8 +5,8 @@ import com.github.houbb.heaven.util.io.FileUtil;
 import com.github.houbb.heaven.util.lang.StringUtil;
 import com.github.houbb.heaven.util.util.CharsetUtil;
 import com.github.houbb.heaven.util.util.CollectionUtil;
-import org.junit.Ignore;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
 
 import java.util.Collections;
 import java.util.List;
@@ -16,11 +16,11 @@ import java.util.List;
  * @author binbin.hou
  * @since 0.0.1
  */
-@Ignore
+
 public class DataInitTest {
 
     @Test
-    @Ignore
+    
     public void splitTest() {
         final String targetFile = "D:\\github\\sensitive-word\\src\\main\\resources\\dict4.txt";
         final String sourceFile = "D:\\github\\sensitive-word\\src\\main\\resources\\_minganci.txt";
@@ -32,7 +32,7 @@ public class DataInitTest {
     }
 
     @Test
-    @Ignore
+    
     public void trimTest() {
         final String source = "D:\\github\\sensitive-word\\src\\main\\resources\\sensitive_word_dict.txt";
         List<String> lines = FileUtil.readAllLines(source);
@@ -55,7 +55,7 @@ public class DataInitTest {
     }
 
     @Test
-    @Ignore
+    
     public void stopWordTest() {
         final String source = "D:\\github\\sensitive-word\\src\\main\\resources\\stopword.txt";
         final String target = "D:\\github\\sensitive-word\\src\\main\\resources\\stopword_chars.txt";
@@ -73,7 +73,7 @@ public class DataInitTest {
     }
 
     @Test
-    @Ignore
+    
     public void dictAllInOneTest() {
         final List<String> allLines = distinctLines("sensitive_word_dict.txt");
 
@@ -103,7 +103,7 @@ public class DataInitTest {
     }
 
     @Test
-    @Ignore
+    
     public void oneWordTest() {
         final String source = "D:\\_github\\sensitive-word\\src\\main\\resources\\sensitive_word_dict.txt";
 

@@ -1,15 +1,12 @@
 package com.github.houbb.sensitive.word.data;
 
 import com.github.houbb.heaven.support.condition.ICondition;
-import com.github.houbb.heaven.support.filter.IFilter;
 import com.github.houbb.heaven.util.io.FileUtil;
-import com.github.houbb.heaven.util.lang.StringUtil;
 import com.github.houbb.heaven.util.util.CharsetUtil;
 import com.github.houbb.heaven.util.util.CollectionUtil;
-import org.junit.Ignore;
-import org.junit.Test;
 
-import java.util.Collections;
+import org.junit.jupiter.api.Test;
+
 import java.util.List;
 
 /**
@@ -17,7 +14,7 @@ import java.util.List;
  * @author binbin.hou
  * @since 0.0.3
  */
-@Ignore
+
 public class StopWordTest {
 
     /**
@@ -25,7 +22,7 @@ public class StopWordTest {
      * @since 0.0.3
      */
     @Test
-    @Ignore
+    
     public void zhTest() {
         final String sourceFile = "stopword.txt";
         final String targetFile = "D:\\github\\sensitive-word\\src\\main\\resources\\stopword_zh.txt";

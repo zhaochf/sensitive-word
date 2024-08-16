@@ -1,7 +1,9 @@
 package com.github.houbb.sensitive.word.bs;
 
-import org.junit.Assert;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.List;
 
@@ -26,7 +28,7 @@ public class SensitiveWordBsEmailTest {
                 .enableEmailCheck(true)
                 .init()
                 .findAll(text);
-        Assert.assertEquals("[sensitiveword@xx.com]", wordList.toString());
+        assertEquals("[sensitiveword@xx.com]", wordList.toString());
     }
 
     /**
@@ -41,14 +43,14 @@ public class SensitiveWordBsEmailTest {
                 .enableEmailCheck(true)
                 .init()
                 .findAll(text);
-        Assert.assertEquals("[123456789@xx.com]", wordList.toString());
+        assertEquals("[123456789@xx.com]", wordList.toString());
     }
 
     @Test
     public void emailTest() {
         final String text = "你我.他你";
         List<String> wordList = SensitiveWordBs.newInstance().init().findAll(text);
-        Assert.assertEquals("[]", wordList.toString());
+        assertEquals("[]", wordList.toString());
     }
 
 }

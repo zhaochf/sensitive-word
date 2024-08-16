@@ -3,8 +3,6 @@ package com.github.houbb.sensitive.word.support.allow;
 import com.github.houbb.heaven.annotation.ThreadSafe;
 import com.github.houbb.heaven.util.io.StreamUtil;
 import com.github.houbb.sensitive.word.api.IWordAllow;
-import com.github.houbb.sensitive.word.api.IWordDeny;
-
 import java.util.List;
 
 /**

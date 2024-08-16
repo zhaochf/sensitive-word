@@ -1,7 +1,6 @@
 package com.github.houbb.sensitive.word.support.resultcondition;
 
 import com.github.houbb.heaven.util.lang.CharUtil;
-import com.github.houbb.heaven.util.util.CharsetUtil;
 import com.github.houbb.sensitive.word.api.IWordContext;
 import com.github.houbb.sensitive.word.api.IWordResult;
 import com.github.houbb.sensitive.word.constant.enums.WordValidModeEnum;

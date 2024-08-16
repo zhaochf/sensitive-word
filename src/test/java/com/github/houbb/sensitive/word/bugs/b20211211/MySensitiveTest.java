@@ -5,13 +5,13 @@ import com.github.houbb.sensitive.word.api.IWordDeny;
 import com.github.houbb.sensitive.word.bs.SensitiveWordBs;
 import com.github.houbb.sensitive.word.support.allow.WordAllows;
 import com.github.houbb.sensitive.word.support.deny.WordDenys;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class MySensitiveTest {
 
 
-    @Test
-    public void test() {
+   @Test
+   public void test() {
         IWordDeny wordDeny = WordDenys.chains(WordDenys.defaults(), new MyWordDeny());
         IWordAllow wordAllow = WordAllows.chains(WordAllows.defaults(), new MyWordAllow());
         SensitiveWordBs sensitiveWordBs = SensitiveWordBs.newInstance()

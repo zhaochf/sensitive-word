@@ -3,7 +3,6 @@ package com.github.houbb.sensitive.word.core;
 import com.github.houbb.heaven.util.guava.Guavas;
 import com.github.houbb.sensitive.word.api.*;
 import com.github.houbb.sensitive.word.api.context.InnerSensitiveWordContext;
-import com.github.houbb.sensitive.word.constant.enums.WordTypeEnum;
 import com.github.houbb.sensitive.word.constant.enums.WordValidModeEnum;
 import com.github.houbb.sensitive.word.support.check.WordCheckResult;
 import com.github.houbb.sensitive.word.support.result.WordResult;

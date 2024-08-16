@@ -5,8 +5,10 @@ import com.github.houbb.sensitive.word.api.IWordDeny;
 import com.github.houbb.sensitive.word.bs.SensitiveWordBs;
 import com.github.houbb.sensitive.word.support.allow.WordAllows;
 import com.github.houbb.sensitive.word.support.deny.WordDenys;
-import org.junit.Assert;
-import org.junit.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
 
 /**
  * @author binbin.hou
@@ -14,8 +16,8 @@ import org.junit.Test;
  */
 public class SensitiveWordBsDefineTest {
 
-    @Test
-    public void defineDenyTest() {
+   @Test
+   public void defineDenyTest() {
         String text = "这是一个测试，我的自定义敏感词。";
 
         SensitiveWordBs wordBs = SensitiveWordBs.newInstance()
@@ -23,11 +25,11 @@ public class SensitiveWordBsDefineTest {
                 .wordAllow(new MyWordAllow())
                 .init();
 
-        Assert.assertEquals("[我的自定义敏感词]", wordBs.findAll(text).toString());
+        assertEquals("[我的自定义敏感词]", wordBs.findAll(text).toString());
     }
 
-    @Test
-    public void defineChainsTest() {
+   @Test
+   public void defineChainsTest() {
         String text = "这是一个测试。我的自定义敏感词。";
 
         IWordDeny wordDeny = WordDenys.chains(WordDenys.defaults(), new MyWordDeny());
@@ -38,7 +40,7 @@ public class SensitiveWordBsDefineTest {
                 .wordAllow(wordAllow)
                 .init();
 
-        Assert.assertEquals("[我的自定义敏感词]", wordBs.findAll(text).toString());
+        assertEquals("[我的自定义敏感词]", wordBs.findAll(text).toString());
     }
 
 }

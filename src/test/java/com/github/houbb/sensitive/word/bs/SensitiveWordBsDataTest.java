@@ -1,8 +1,11 @@
 package com.github.houbb.sensitive.word.bs;
 
 import com.github.houbb.sensitive.word.support.data.WordDatas;
-import org.junit.Assert;
-import org.junit.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import org.junit.jupiter.api.Test;
 
 /**
  * <p> project: sensitive-word-SensitiveWordBsConfigTest </p>
@@ -20,8 +23,8 @@ public class SensitiveWordBsDataTest {
                 .init();
 
         final String text = "五星红旗迎风飘扬，毛主席的画像屹立在天安门前。";
-        Assert.assertTrue(wordBs.contains(text));
-        Assert.assertEquals("[五星红旗, 毛主席, 天安门]", wordBs.findAll(text).toString());
+        assertTrue(wordBs.contains(text));
+        assertEquals("[五星红旗, 毛主席, 天安门]", wordBs.findAll(text).toString());
     }
 
 }

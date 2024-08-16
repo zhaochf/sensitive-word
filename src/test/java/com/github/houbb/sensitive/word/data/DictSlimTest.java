@@ -8,8 +8,8 @@ import com.github.houbb.heaven.util.util.CollectionUtil;
 import com.github.houbb.opencc4j.core.impl.ZhConvertBootstrap;
 import com.github.houbb.opencc4j.support.segment.impl.CharSegment;
 import com.github.houbb.sensitive.word.utils.InnerWordNumUtils;
-import org.junit.Ignore;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
@@ -18,7 +18,7 @@ import java.util.List;
  * @author binbin.hou
  * @since 0.0.3
  */
-@Ignore
+
 public class DictSlimTest {
 
     /**
@@ -31,7 +31,7 @@ public class DictSlimTest {
      * @since 0.0.3
      */
     @Test
-    @Ignore
+    
     public void formatTest() {
         final String sourceFile = "D:\\github\\sensitive-word\\src\\main\\resources\\sensitive_word_dict.txt";
         final String targetFile = "D:\\github\\sensitive-word\\src\\main\\resources\\sensitive_word_dict.txt";
@@ -65,7 +65,7 @@ public class DictSlimTest {
      * @since 0.0.3
      */
     @Test
-    @Ignore
+    
     public void removeTest() {
         final String sourceFile = "D:\\github\\sensitive-word\\src\\main\\resources\\sensitive_word_dict.txt";
         final String targetFile = "D:\\github\\sensitive-word\\src\\main\\resources\\sensitive_word_dict.txt";

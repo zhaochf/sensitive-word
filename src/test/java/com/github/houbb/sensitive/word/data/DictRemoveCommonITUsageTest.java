@@ -2,8 +2,8 @@ package com.github.houbb.sensitive.word.data;
 
 import com.github.houbb.heaven.util.io.FileUtil;
 import com.github.houbb.sensitive.word.bs.SensitiveWordBs;
-import org.junit.Ignore;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
 
 import java.io.File;
 import java.util.HashSet;
@@ -16,14 +16,14 @@ import java.util.Set;
  * @author binbin.hou
  * @since 0.14.1
  */
-@Ignore
+
 public class DictRemoveCommonITUsageTest {
 
     /**
      * 统计自己的文章，移除常用的 it 用语等。降低误判率
      */
     @Test
-    @Ignore
+    
     public void removeSingleWord() {
         final String dir = "D:\\github\\houbb.github.io\\_posts";
 

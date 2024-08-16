@@ -1,8 +1,7 @@
 package com.github.houbb.sensitive.word.bugs.b31;
 
 import com.github.houbb.sensitive.word.core.SensitiveWordHelper;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class BugWeixieTest {
 
